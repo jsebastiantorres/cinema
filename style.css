@@ -1,0 +1,166 @@
+/* Paleta de colores */
+:root {
+    --color-soap-1: #00161f;
+    --color-soap-2: #025951;
+    --color-soap-3: #02735E;
+    --color-soap-4: #038C3E;
+    --color-soap-5: #fff;
+    --color-soap-6: #fff;
+    --color-soap-7: #0CF25D;
+
+    --fuente-titulos: 'Courier New', Courier, monospace;
+}
+
+
+nav {
+    padding-right: 24px;
+    padding-left: 24px;
+    background-color: var(--color-soap-1);
+    user-select: none;
+
+}
+
+#home {
+    padding-left: 16px;
+    font-family: var(--fuente-titulos);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-soap-5);
+    user-select: none;
+}
+
+#home:hover {
+    color: var(--color-soap-7);
+}
+
+.nav-item>a {
+    color: var(--color-soap-5);
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+    color: var(--color-soap-7);
+}
+
+/* Cambiar color del título al abrir el dropdown */
+.nav-item.dropdown .nav-link.dropdown-toggle.show {
+    color: var(--color-soap-7);
+}
+
+/* Fondo del menú desplegable */
+.dropdown-menu {
+    background-color: var(--color-soap-1);
+    border-color: var(--color-soap-1);
+}
+
+/* Estilo de los ítems del dropdown */
+.dropdown-menu .dropdown-item {
+    color: var(--color-soap-6);
+    background-color: var(--color-soap-1);
+}
+
+
+/* Toggler */
+.navbar-toggler {
+    border: 2px solid var(--color-soap-5);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    border-top: 2px solid var(--color-soap-7);
+}
+
+/* Hover de los ítems */
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:focus {
+    color: var(--color-soap-1);
+    background-color: var(--color-soap-7);
+    /* mantiene el fondo */
+}
+
+/* Título del dropdown cuando está abierto */
+.nav-item.dropdown .nav-link.dropdown-toggle.show,
+.nav-item.dropdown .nav-link.dropdown-toggle:focus,
+.nav-item.dropdown .nav-link.dropdown-toggle:active {
+    color: var(--color-soap-7);
+}
+
+
+/*  */
+/*  */
+/* Carousel container: ocupa 50% de la pantalla */
+#carousel_seccion {
+    max-height: 70vh;
+    display: flex;
+    /* Limita la altura del carrusel al 70% del alto de la ventana */
+    overflow: hidden;
+}
+
+#carousel_seccion img {
+    height: 100%;
+    object-fit: cover;
+    /* Recorta la imagen para que se ajuste sin deformarse */
+    object-position: center center;
+}
+
+.titulo_caption{
+    font-size: 80px;
+    font-family: "BBH Sans Hegarty", sans-serif;
+    /* font-weight: ; */
+    transform: scale(1, 1.6);
+    background-color: none;
+}
+
+.parrafo_caption {
+    font-size: 24px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* Iconos aplicaciones */
+.iconos{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+
+@media (max-width: 768px) {
+    #carousel_seccion {
+        max-height: 50vh;
+    }
+}
+
+
+
+
+/*  */
+/*  */
+/* Seccion TOP PELIS */
+#tutulo_top_pelis {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    font-size: 2rem;
+    user-select: none;
+    background: var(--color-soap-1);
+    color: var(--color-soap-5);
+}
+
+
+/* Efecto card */
+.image-overlay {
+    background-color: rgba(03, 41, 59, 0.548);
+    /* Fondo semitransparente */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    /* Transición suave */
+}
+
+.movie_card:hover .image-overlay,
+.movie_card:focus .image-overlay {
+    opacity: 1;
+}
