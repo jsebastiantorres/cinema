@@ -1,4 +1,4 @@
-import { peliculas, agregarPelicula } from "/peliculas.js";
+import { peliculas, agregarPelicula } from "./peliculas.js";
 
 
 const peliculasAgregadas = peliculas;
@@ -19,7 +19,7 @@ function mostrarPeliculas(peliculasAgregadas) {
         // col-md-6: 2 columnas en tabletas (>=768px)
         // col-lg-3: 4 columnas en escritorio (>=992px)
         // mb-4: margen inferior
-        divPelicula.classList.add("col", "col-xs-6", "col-sm-4", "col-md-3", "col-lg-2", "col-xl-2", "col-xxl-2", "py-2", "px-2");
+        divPelicula.classList.add("col", "col-12", "col-xs-6", "col-sm-6", "col-md-6", "col-lg-2", "col-xl-2", "col-xxl-2", "py-2");
 
         divPelicula.innerHTML = `
             <div class="movie_card position-relative h-100">
