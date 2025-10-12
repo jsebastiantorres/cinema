@@ -103,7 +103,7 @@ nav {
     object-position: center center;
 }
 
-.titulo_caption{
+.titulo_caption {
     font-size: 80px;
     font-family: "BBH Sans Hegarty", sans-serif;
     /* font-weight: ; */
@@ -118,10 +118,10 @@ nav {
 }
 
 /* Iconos aplicaciones */
-.iconos{
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
+.iconos {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 
@@ -163,4 +163,27 @@ nav {
 .movie_card:hover .image-overlay,
 .movie_card:focus .image-overlay {
     opacity: 1;
+}
+
+.div_footer {
+    background-color: var(--color-soap-1);
+}
+
+
+footer {
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+#texto_footer {
+color: #6c757d;
+}
+
+#texto_footer p:hover {
+    color: black;
+}
+
+i:hover {
+    color: black;
 }
