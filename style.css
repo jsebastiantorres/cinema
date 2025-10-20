@@ -25,12 +25,12 @@ nav {
     font-family: var(--fuente-titulos);
     font-size: 2rem;
     font-weight: bold;
-    color: var(--color-soap-5);
+    color: var(--color-soap-7);
     user-select: none;
 }
 
 #home:hover {
-    color: var(--color-soap-7);
+    color: var(--color-soap-4);
 }
 
 .nav-item>a {
@@ -137,19 +137,32 @@ nav {
 /*  */
 /*  */
 /* Seccion TOP PELIS */
-#tutulo_top_pelis {
+#div_listado_peliculas {
     padding-top: 24px;
     padding-bottom: 24px;
     padding-left: 40px;
     padding-right: 40px;
+    /* font-family: var(--fuente-titulos);
+    font-weight: bold;
+    font-size: 2rem;
+    user-select: none; */
+    background: var(--color-soap-1);
+}
+
+#titulo_listado_peliculas{
     font-family: var(--fuente-titulos);
     font-weight: bold;
     font-size: 2rem;
     user-select: none;
-    background: var(--color-soap-1);
-    color: var(--color-soap-5);
+    color: var(--color-soap-7);
 }
 
+#dropdown_categorias{
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    font-size: 2rem;
+    user-select: none;
+}
 
 /* Efecto card */
 .image-overlay {

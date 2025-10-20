@@ -152,10 +152,29 @@
     </section>
 
 
-
-
     <section id="seccion_top_peliculas">
-        <h4 id="tutulo_top_pelis" class="text-center">Top Peliculas</h4>
+        <div id="div_listado_peliculas" class="d-flex justify-content-around align-items-center">
+            <div id="">
+                <h3 id="titulo_listado_peliculas" class="text-center my-0 py-0">Listado Peliculas</h3>
+            </div>
+            <div>
+                
+                <ul id="" class="list-unstyled text-center my-0 py-0 border rounded px-4">
+                    <li id="dropdown_categorias" class="nav-item dropdown">
+                        
+                        <a id="dropdown_categorias" class="nav-link dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorias
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" data-value="Accion">Acción</a></li>
+                            <li><a class="dropdown-item" data-value="Terror">Terror</a></li>
+                            <li><a class="dropdown-item" data-value="Comedia">Comedia</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
         <div class="container h-100">
             <!-- Fila -->
@@ -311,7 +330,8 @@
 
 
     <div class="container mt-2">
-        <footer class="d-flex flex-wrap justify-content-between align-items-center py-4 my-4 px-4 border-top border-bottom">
+        <footer
+            class="d-flex flex-wrap justify-content-between align-items-center py-4 my-4 px-4 border-top border-bottom">
             <div class="col-md-8 d-flex align-items-center" id="texto_footer">
                 <p class="mb-3 mb-md-0 ">© 2025 Juan Sebastián Torres Aguilar</p>
             </div>
@@ -338,9 +358,9 @@
         crossorigin="anonymous"></script>
 
     <!-- Script Index -->
-    <script src="cinema.js" type="module"></script>
+    <script src="/cinema.js" type="module"></script>
     <!-- Script para las peliculas -->
-    <script src="peliculas.js" type="module"></script>
+    <script src="/peliculas.js" type="module"></script>
 
 
     <!-- Iconos -->
