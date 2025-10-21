@@ -86,6 +86,31 @@ nav {
 }
 
 
+/* Seccion Buscar */
+/* input buscar */
+#input_buscar:focus {
+    border-color: var(--color-soap-7);
+    border-style: solid;
+    border-width: 2px;
+}
+
+/* Boton buscar */
+#boton_buscar {
+    font-weight: bold;
+    color: var(--color-soap-7);
+    border-color: var(--color-soap-7);
+    border-style: solid;
+    border-width: 2px;
+}
+
+#boton_buscar:hover {
+    background-color: var(--color-soap-7);
+    color: var(--color-soap-1);
+    font-weight: bolder
+}
+
+
+
 /*  */
 /*  */
 /* Carousel container: ocupa 50% de la pantalla */
@@ -149,7 +174,7 @@ nav {
     background: var(--color-soap-1);
 }
 
-#titulo_listado_peliculas{
+#titulo_listado_peliculas {
     font-family: var(--fuente-titulos);
     font-weight: bold;
     font-size: 2rem;
@@ -157,7 +182,7 @@ nav {
     color: var(--color-soap-7);
 }
 
-#dropdown_categorias{
+#dropdown_categorias {
     font-family: var(--fuente-titulos);
     font-weight: bold;
     font-size: 2rem;
@@ -190,7 +215,7 @@ footer {
 }
 
 #texto_footer {
-color: #6c757d;
+    color: #6c757d;
 }
 
 #texto_footer p:hover {
