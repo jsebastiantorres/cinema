@@ -4,7 +4,7 @@ import { peliculas, agregarPelicula } from "./peliculas.js";
 
 
 const peliculasAgregadas = peliculas;
-const peliculasPorMostrar = []
+
 
 // elemento del DOM donde se mostrara el listado de las peliculas
 const elementoListaPeliculas = document.getElementById('listado_peliculas');
@@ -48,34 +48,28 @@ console.log(peliculasAgregadas);
 
 
 
-// Variable para filtrar peliculas
-const generoFiltrar = 'Drama';
-
-
 // filtar por categoria
-function filtrarPorCategoria(peliculasAgregadas, generoFiltrar) {
+function filtrarPorCategoria(categoriaFiltro) {
 
+    // array que guarda las peliculas filtradas
     let peliculasFiltradas = [];
 
-    peliculasAgregadas.forEach(pelicula => {
-        let generoIteracion = pelicula.genero;
-        let coincide = generoIteracion.includes(generoFiltrar);
-        if (coincide) {
-            peliculasFiltradas.push(pelicula)
-            console.log("Coincidencia");
-        }
-    });
+    // Se filtran las peliculas que incluyan la categoria seleccionada dentro de la propiedad genero
+    peliculasFiltradas = peliculasAgregadas.filter(pelicula => {
+        let generoPelicula = pelicula.genero;
+        return generoPelicula.includes(categoriaFiltro)
+    })
 
-    console.log("Generos de peliculas filtradas");
-    console.log(peliculasFiltradas);
+    return mostrarPeliculas(peliculasFiltradas);
 }
+
 
 
 // Dropdown categorias
 const dropdownCategorias = document.querySelectorAll('.dropdown-item');
-const toggleButton = document.getElementById('dropdown_categorias');
 
 
+// Seleccion de categoria - llama la funcion filtrarCategoria
 dropdownCategorias.forEach(item => {
     item.addEventListener('click', ((event) => {
         // Prevenir el comportamiento por defecto del enlace
@@ -84,16 +78,65 @@ dropdownCategorias.forEach(item => {
         // Capturar el valor del atributo 'data-value'
         const categoriaSeleccionada = item.getAttribute('data-value');
 
-        console.log(categoriaSeleccionada);
-        
+        if (categoriaSeleccionada == 'Todas') {
+            // Se muestran todas las peliculas agregadas
+            mostrarPeliculas(peliculasAgregadas)
+        } else {
+            // se filtra por la categoria seleccionada
+            filtrarPorCategoria(categoriaSeleccionada);
+        }
+
     }))
 })
 
 
 
+// Capturar el string desde la busqueda
+const botonBuscar = document.getElementById('boton_buscar');
+
+// Evento que dispara la funcion buscar
+botonBuscar.addEventListener('click', (event) => {
+    event.preventDefault();
+    // se captura el valor del campo buscar
+    const elementoBuscar = document.getElementById('input_buscar').value;
+    // se llama a la funcion buscar pelicula, se establece elementoBuscar como argumento
+    buscarPelicula(elementoBuscar)
+})
+
+
+
+// Funcion que busca una pelicula por el nombre
+function buscarPelicula(stringBuscado) {
+
+    // Array que guarda las peliculas que tienen coincidencia con el string buscado
+    let peliculasEncontradas = [];
+
+    // convertimos el string en array para facilitar la busqueda por palabras
+    let arrayDelStringBuscado = stringBuscado.split(" ");
+    // Capitalizamos la palabra, convirtiendo la primera letra en mayuscula, el resto en minuscula
+    let arrayBuscadoCapitalizado = arrayDelStringBuscado.map(palabra => {
+        // setear la primera letra en mayúscula y unirla con el resto de la palabra.
+        return palabra.charAt(0).toUpperCase() + palabra.slice(1);
+    })
+
+
+    // Filtramos las peliculas que cumplan con la coincidencia de la palabra buscada
+    peliculasEncontradas = peliculasAgregadas.filter(pelicula => {
+        // se obtener el nombre de la pelicula
+        let nombrePelicula = pelicula.nombre;
+        // si almenos una palabra esta en el nombre de la pelicula
+        return arrayBuscadoCapitalizado.some(palabra => {
+            // si el nombre incluye alguna palabra se agrega a peliculasEncontradas
+            return nombrePelicula.includes(palabra);
+        })
+    })
+
+    mostrarPeliculas(peliculasEncontradas);
+
+}
+
 
 // // Generos
-// filtrarPorCategoria(peliculasAgregadas, generoFiltrar);
 
 // peliculasAgregadas.forEach(pelicula => {
 //     console.log(pelicula.genero);
