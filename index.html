@@ -47,7 +47,8 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input id="input_buscar" class="form-control me-2 shadow-none" type="search" placeholder="Buscar pelicula" aria-label="Search" />
+                    <input id="input_buscar" class="form-control me-2 shadow-none" type="search"
+                        placeholder="Buscar pelicula" aria-label="Search" />
                     <button id="boton_buscar" class="btn btn-outline-success" type="submit">Buscar</button>
                 </form>
             </div>
@@ -158,10 +159,10 @@
                 <h3 id="titulo_listado_peliculas" class="text-center my-0 py-0">Listado Peliculas</h3>
             </div>
             <div>
-                
+
                 <ul id="" class="list-unstyled text-center my-0 py-0 border rounded px-4">
                     <li id="dropdown_categorias" class="nav-item dropdown">
-                        
+
                         <a id="dropdown_categorias" class="nav-link dropdown-toggle" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             Categorias
@@ -319,10 +320,37 @@
 
 
 
-        <div id="lista_peliculas">
+        <!-- Botón para abrir el modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">
+            Abrir Modal
+        </button>
 
+        <!-- Modal -->
+        <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- Encabezado del modal -->
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="miModalLabel">Título del Modal</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+
+                    <!-- Cuerpo del modal -->
+                    <div class="modal-body text-center">
+                        <img src="https://via.placeholder.com/300x200" alt="Imagen de ejemplo" class="img-fluid mb-3">
+                        <p>Este es un párrafo dentro del modal. Puedes colocar aquí cualquier contenido que desees
+                            mostrar.</p>
+                    </div>
+
+                    <!-- Pie del modal -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
-
 
 
 
