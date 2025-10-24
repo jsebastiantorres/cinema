@@ -208,6 +208,35 @@ nav {
 }
 
 
+/* Modal */
+.modal_imagen_container {
+  /* Establece las dimensiones fijas para el contenedor */
+  width: 300px; /* Ancho fijo */
+  height: 400px; /* Alto fijo */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que se salga del contenedor */
+}
+
+.modal_imagen_container img {
+  width: 100%; /* La imagen ocupa el 100% del ancho del contenedor */
+  height: 100%; /* La imagen ocupa el 100% del alto del contenedor */
+  /*
+  * Elige cómo quieres que la imagen se ajuste:
+  *
+  * - `object-fit: cover;`  → Cubre todo el espacio, recortando los bordes si es necesario.
+  * - `object-fit: contain;` → Muestra la imagen completa, dejando espacio vacío si es necesario.
+  * - `object-fit: fill;` → Estira o comprime la imagen para llenar el espacio, pudiendo deformarla.
+  */
+  object-fit: cover; /* Recomendado: mantiene la proporción y cubre el área */
+}
+
+.texto-modal{
+    font-size: 36;
+}
+
+
+
+
+/* Footer */
 footer {
     font-family: 'Courier New', Courier, monospace;
     font-weight: bolder;

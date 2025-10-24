@@ -6,6 +6,20 @@ import { peliculas, agregarPelicula } from "./peliculas.js";
 const peliculasAgregadas = peliculas;
 
 
+var contadorId = 10;
+peliculasAgregadas.map(pelicula => {
+    pelicula.id = contadorId;
+    contadorId++
+})
+
+console.log("Peliculas con ID");
+console.log(peliculasAgregadas);
+
+
+
+
+
+
 // elemento del DOM donde se mostrara el listado de las peliculas
 const elementoListaPeliculas = document.getElementById('listado_peliculas');
 
@@ -22,17 +36,20 @@ function mostrarPeliculas(peliculasAgregadas) {
         // col-md-6: 2 columnas en tabletas (>=768px)
         // col-lg-3: 4 columnas en escritorio (>=992px)
         // mb-4: margen inferior
+        divPelicula.setAttribute('id', `${pelicula.id}`);
+        // atributo para que se obtenga solo el ID del div padre de la tarjeta
+        // divPelicula.setAttribute("onclick", "obtenerIdPadre(event)");
         divPelicula.classList.add("col", "col-12", "col-xs-6", "col-sm-6", "col-md-6", "col-lg-2", "col-xl-2", "col-xxl-2", "py-2");
 
         divPelicula.innerHTML = `
-            <div class="movie_card position-relative h-100">
+            <div id="${pelicula.id}" class="movie_card position-relative h-100">
                 <img src="${pelicula.img}"
                     class="w-100 h-100 rounded object-fit-cover img-fluid " alt="${pelicula.nombre}">
-                <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex rounded">
-                    <div class="px-2 pb-2 align-self-end text-start text-white ">
-                        <h5 class="p-0 m-0">${pelicula.nombre}</h5>
-                        <p class="p-0 m-0">${pelicula.year}</p>
-                        <p class="p-0 m-0">${pelicula.actores}</p>
+                <div id="${pelicula.id}" class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex rounded">
+                    <div id="${pelicula.id}" class="px-2 pb-2 align-self-end text-start text-white ">
+                        <h5 id="${pelicula.id}" class="p-0 m-0">${pelicula.nombre}</h5>
+                        <p id="${pelicula.id}" class="p-0 m-0">${pelicula.year}</p>
+                        <p id="${pelicula.id}" class="p-0 m-0">${pelicula.actores}</p>
                     </div>
                 </div>
             </div>
@@ -61,6 +78,7 @@ function filtrarPorCategoria(categoriaFiltro) {
     })
 
     return mostrarPeliculas(peliculasFiltradas);
+
 }
 
 
@@ -134,6 +152,95 @@ function buscarPelicula(stringBuscado) {
     mostrarPeliculas(peliculasEncontradas);
 
 }
+
+
+
+// obtener id de la pelicula para mostrar el modal
+const botonModalPelicula = document.addEventListener('click', function (event) {
+    // elemento clickeado
+    const elementoClickeado = event.target;
+    // obtener el id del elemento clickeado
+    const idElementoClickeado = elementoClickeado.id;
+    console.log(`el id de la pelicula es ${idElementoClickeado}`);
+    console.log(idElementoClickeado);
+
+    // validar que el id corresponda a una pelicula
+    try {
+        // intentar convertir el string a numero
+        let idNumero = Number(idElementoClickeado);
+        if (idNumero > 0) {
+            mostrarModalPelicula(idNumero);
+        } else {
+            console.log("el id no corresponde a una pelicula");
+        }
+    } catch (error) {
+        console.error("no se pudo convertir el id a number");
+    }
+})
+
+
+
+
+
+
+
+// Funcion Mostrar Modal por cada tarjeta
+function mostrarModalPelicula(idPelicula) {
+    // comprobar que el id de la peliucula 
+    console.log("Se muestra modal");
+
+    // Se obtiene el elemento del dom
+    const divModal = document.getElementById('modal_pelicula');
+    // Se crea la instancia del modal para poder utilizar los metodos de bootstrap y mostrar el modal
+    const miModal = new bootstrap.Modal(divModal);
+
+    // buscar la pelicula en el array de peliculasAgregadas
+    let peliEncontrada = peliculasAgregadas.filter((pelicula) => pelicula.id === idPelicula)
+    let peliculaEncontrada = peliEncontrada[0];
+
+
+    // console.log(`Pelicula encontrada: ${peliculaEncontrada}`);
+    // console.log(peliculaEncontrada);
+
+
+    divModal.innerHTML = `
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Encabezado del modal -->
+                <div class="modal-header">
+                    <h3 class="modal-title" id="miModalLabel">${peliculaEncontrada.nombre}</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+
+                <!-- Cuerpo del modal -->
+                <div class="modal-body text-center d-flex flex-column justify-content-center ">
+                <div class="d-flex justify-content-center bg-black rounded">
+                    <div class="modal_imagen_container w-75 h-75" >    
+                        <img src="${peliculaEncontrada.img}" alt="Imagen de la pelicula" class="">
+                    </div>
+                    </div>
+                    <div class="pt-2">
+                        <p class="text-start mb-0 pb-0 texto-modal"><strong>Sinapsis: </strong>${peliculaEncontrada.sinopsis}</p>
+                        <p class="text-start mb-0 pb-0 texto-modal"><strong>Actores: </strong>${peliculaEncontrada.actores}</p>
+                        <p class="text-start mb-0 pb-0 texto-modal"><strong>Genero: </strong>${peliculaEncontrada.genero}</p>
+                    </div>
+                </div>
+
+                <!-- Pie del modal -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+    `;
+
+    // Se muestra el modal
+    miModal.show();
+
+}
+
 
 
 // // Generos

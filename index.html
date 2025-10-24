@@ -189,21 +189,6 @@
             <!-- Fila -->
             <div id="listado_peliculas" class="row h-100 mb-2 d-flex justify-content-center user-select-none px-0">
 
-                <!-- col -->
-                <div class="col col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 col-xxl-1 py-2 px-2">
-                    <!-- card -->
-                    <div class="movie_card position-relative">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBU60WHTQaI4iNwckH5AiX0DX-bELh0VBNxQ&s"
-                            class="card-img-top img-fluid rounded" alt="imagen de la pelicula">
-                        <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex rounded">
-                            <div class="px-2 pb-2 align-self-end text-start text-white ">
-                                <h5 class="p-0 m-0">Titulo Pelicula</h5>
-                                <p class="p-0 m-0">Año</p>
-                                <p class="p-0 m-0">Actores..</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- col -->
                 <div class="col col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 col-xxl-1 py-2 px-2">
@@ -295,52 +280,28 @@
                         </div>
                     </div>
                 </div>
-                <!-- col -->
-                <div class="col col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-1 col-xxl-1 py-2 px-2">
-                    <!-- card -->
-                    <div class="movie_card position-relative">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBU60WHTQaI4iNwckH5AiX0DX-bELh0VBNxQ&s"
-                            class="card-img-top img-fluid rounded" alt="imagen de la pelicula">
-                        <div class="image-overlay position-absolute top-0 start-0 w-100 h-100 d-flex rounded">
-                            <div class="px-2 pb-2 align-self-end text-start text-white ">
-                                <h5 class="p-0 m-0">Titulo Pelicula</h5>
-                                <p class="p-0 m-0">Año</p>
-                                <p class="p-0 m-0">Actores..</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-
-
             </div>
         </div>
 
-
-
-
-        <!-- Botón para abrir el modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">
-            Abrir Modal
-        </button>
-
         <!-- Modal -->
-        <div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+        <div id="modal_pelicula"  class="modal fade" tabindex="-1" aria-labelledby="modal_pelicula" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
 
                     <!-- Encabezado del modal -->
                     <div class="modal-header">
-                        <h3 class="modal-title" id="miModalLabel">Título del Modal</h3>
+                        <h3 class="modal-title" id="miModalLabel">Título de la Pelicula</h3>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                     </div>
 
                     <!-- Cuerpo del modal -->
                     <div class="modal-body text-center">
-                        <img src="https://via.placeholder.com/300x200" alt="Imagen de ejemplo" class="img-fluid mb-3">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBU60WHTQaI4iNwckH5AiX0DX-bELh0VBNxQ&s"
+                            alt="Imagen de la pelicula" class="img-fluid ">
                         <p>Este es un párrafo dentro del modal. Puedes colocar aquí cualquier contenido que desees
                             mostrar.</p>
+                        <p>Actores: </p>
+                        <p>Actores: </p>
                     </div>
 
                     <!-- Pie del modal -->
@@ -351,16 +312,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
 
     </section>
 
