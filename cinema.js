@@ -1,10 +1,6 @@
 import { peliculas, agregarPelicula } from "./peliculas.js";
 
-
-
-
 const peliculasAgregadas = peliculas;
-
 
 var contadorId = 10;
 peliculasAgregadas.map(pelicula => {
@@ -14,10 +10,6 @@ peliculasAgregadas.map(pelicula => {
 
 console.log("Peliculas con ID");
 console.log(peliculasAgregadas);
-
-
-
-
 
 
 // elemento del DOM donde se mostrara el listado de las peliculas
@@ -63,8 +55,6 @@ mostrarPeliculas(peliculasAgregadas);
 console.log(peliculasAgregadas);
 
 
-
-
 // filtar por categoria
 function filtrarPorCategoria(categoriaFiltro) {
 
@@ -82,10 +72,8 @@ function filtrarPorCategoria(categoriaFiltro) {
 }
 
 
-
 // Dropdown categorias
 const dropdownCategorias = document.querySelectorAll('.dropdown-item');
-
 
 // Seleccion de categoria - llama la funcion filtrarCategoria
 dropdownCategorias.forEach(item => {
@@ -122,7 +110,6 @@ botonBuscar.addEventListener('click', (event) => {
 })
 
 
-
 // Funcion que busca una pelicula por el nombre
 function buscarPelicula(stringBuscado) {
 
@@ -154,7 +141,6 @@ function buscarPelicula(stringBuscado) {
 }
 
 
-
 // obtener id de la pelicula para mostrar el modal
 const botonModalPelicula = document.addEventListener('click', function (event) {
     // elemento clickeado
@@ -177,10 +163,6 @@ const botonModalPelicula = document.addEventListener('click', function (event) {
         console.error("no se pudo convertir el id a number");
     }
 })
-
-
-
-
 
 
 
@@ -242,9 +224,7 @@ function mostrarModalPelicula(idPelicula) {
 }
 
 
-
-// // Generos
-
+// Prueba log peliculas x genero
 // peliculasAgregadas.forEach(pelicula => {
 //     console.log(pelicula.genero);
 // })
